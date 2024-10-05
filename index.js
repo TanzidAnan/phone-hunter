@@ -4,9 +4,14 @@ const loadAllPhone = async() =>{
 
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=iphone`);
     const data =await res.json();
-    console.log(data.data)
+    displayAllPhone(data.data.slice(0,6))
 
 }
+
+const displayAllPhone =(phones) =>{
+    console.log(phones)
+}
+
 const handleSearch =() =>{
     // console.log('Data');
     document.getElementById('spinner').style.display='block'
@@ -16,3 +21,5 @@ const handleSearch =() =>{
         
     },3000)
 }
+
+loadAllPhone()
