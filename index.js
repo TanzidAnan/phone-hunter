@@ -1,5 +1,4 @@
 const loadAllPhone = async (status, brandName) => {
-    console.log("All Phone");
     document.getElementById('spinner').style.display = 'none'
 
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${brandName ? brandName : 'iphone'}`);
@@ -11,7 +10,6 @@ const loadAllPhone = async (status, brandName) => {
         displayAllPhone(data.data.slice(0, 6))
     }
 
-    console.log(status)
 }
 const data = {
     "brand": "Apple ",
