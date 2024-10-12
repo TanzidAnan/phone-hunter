@@ -57,7 +57,7 @@ const handleShowAll = () => {
 
 const handleSearch = () => {
     // console.log('Data');
-    document.getElementById('spinner').style.display = 'block';
+    document.getElementById('spinnerphones').style.display = 'block';
     const searchText = document.getElementById('search-box').value;
 
 
@@ -90,4 +90,5 @@ const phoneDeteils = async(slug) =>{
     my_modal_5.showModal()
 }
 
-loadAllPhone(false, "iphone")
+loadAllPhone(false, "iphone");
+handleShowAll()
