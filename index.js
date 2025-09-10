@@ -24,7 +24,7 @@ const displayAllPhone = (phones) => {
     const phonesContainer = document.getElementById('phones-container');
     phones.forEach(phone => {
         console.log(phone);
-        const {brand,image,slug} =phone
+        const { brand, image, slug } = phone
         const div = document.createElement('div');
         div.innerHTML = `
         <div class="card bg-base-100 m-2 w-96 shadow-xl">
@@ -60,9 +60,10 @@ const handleSearch = () => {
     }, 3000)
 }
 
-const phoneDetails =async(slug) =>{
-const response =fetch(`https://openapi.programming-hero.com/api/phone/${slug}`)
-const data = await response.json();
+const phoneDetails = async (slug) => {
+    const response =await fetch(`https://openapi.programming-hero.com/api/phone/${slug}`);
+    const data =await response.json()
+    console.log(data.data)
 }
 
 loadAllPhons(false, 'iphone')
