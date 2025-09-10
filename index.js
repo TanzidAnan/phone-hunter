@@ -5,6 +5,7 @@ const loadAllPhons = async (status, searchText) => {
     // .then(res =>res.json())
     // .then(data =>console.log(data))
     // .catch((error) =>console.log(error))
+   
 
     const res = await fetch(`https://openapi.programming-hero.com/api/phones?search=${searchText ? searchText : 'iphone'}`)
     const data = await res.json();
@@ -13,6 +14,14 @@ const loadAllPhons = async (status, searchText) => {
     }
     else {
         displayAllPhone(data.data.slice(0, 6))
+    }
+
+     const showAllButton= document.getElementById('showAllButton');
+    if(data.data.length>6 && !status){
+        showAllButton.style.display ='block'
+    }
+    else{
+        showAllButton.style.display ='none'
     }
 
 
@@ -50,7 +59,8 @@ const displayAllPhone = (phones) => {
 }
 
 const handleShowAll = () => {
-    loadAllPhons(true)
+    document.getElementById("showAllButton").style.display = "none"; 
+    loadAllPhons(true,document.getElementById('search-box').value)
 }
 
 
