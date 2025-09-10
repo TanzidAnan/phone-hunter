@@ -38,7 +38,7 @@ const displayAllPhone = (phones) => {
     <h2 class="card-title">${brand}</h2>
     <p>${slug}</p>
     <div class="card-actions">
-      <button onclick="phoneDetails()" class="btn btn-primary">Details</button>
+      <button onclick="phoneDetails('${slug}')" class="btn btn-primary">Details</button>
     </div>
   </div>
 </div>
@@ -60,8 +60,9 @@ const handleSearch = () => {
     }, 3000)
 }
 
-const phoneDetails =(slug) =>{
-console.log(5454)
+const phoneDetails =async(slug) =>{
+const response =fetch(`https://openapi.programming-hero.com/api/phone/${slug}`)
+const data = await response.json();
 }
 
 loadAllPhons(false, 'iphone')
