@@ -22,6 +22,7 @@ const loadAllPhons = async (status, searchText) => {
 const displayAllPhone = (phones) => {
     // console.log(phones);
     const phonesContainer = document.getElementById('phones-container');
+     phonesContainer.innerHTML = "";
     phones.forEach(phone => {
         // console.log(phone);
         const { brand, image, slug } = phone
@@ -31,7 +32,7 @@ const displayAllPhone = (phones) => {
   <figure class="px-10 pt-10">
     <img
       src=${image}
-      alt="Shoes"
+      alt="phone"
       class="rounded-xl" />
   </figure>
   <div class="card-body items-center text-center">
@@ -43,7 +44,8 @@ const displayAllPhone = (phones) => {
   </div>
 </div>
         `;
-        phonesContainer.appendChild(div)
+        phonesContainer.appendChild(div);
+       
     });
 }
 
